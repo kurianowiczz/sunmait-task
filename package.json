@@ -1,0 +1,38 @@
+{
+  "name": "sunmait-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon —exec babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurianowiczz/sunmait-task.git"
+  },
+  "author": "Kuryanovich Daria",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurianowiczz/sunmait-task/issues"
+  },
+  "homepage": "https://github.com/kurianowiczz/sunmait-task#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.2"
+  }
+}
