@@ -6,8 +6,12 @@ export default (sequelize, DataTypes) => {
             primaryKey: true,
             allowNull: false
         },
-        name: {
-            type: DataTypes.ENUM('Developer', 'Manager'),
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        date: {
+            type: DataTypes.DATE,
             allowNull: false,
         },
     }, {

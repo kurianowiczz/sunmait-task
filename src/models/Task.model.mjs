@@ -14,7 +14,6 @@ export default (sequelize, DataTypes) => {
             allowNull: false,
         },
         status: {
-            // TODO bash script to load enum
             type: DataTypes.ENUM('waiting', 'implementation', 'verifying', 'releasing'),
             allowNull: false,
         },

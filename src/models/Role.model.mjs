@@ -7,7 +7,7 @@ export default (sequelize, DataTypes) => {
             allowNull: false,
         },
         name: {
-            type: DataTypes.ENUM('Developer', 'Manager'),
+            type: DataTypes.STRING,
             allowNull: false,
         },
     }, {
