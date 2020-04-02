@@ -24,7 +24,7 @@ export default async () => {
     User.hasMany(Comment, {foreignKey: 'userId'});
     Task.hasMany(Comment, {foreignKey: 'taskId'});
 
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
 
     Container.setItem('userModel', User);
     Container.setItem('roleModel', Role);
