@@ -3,8 +3,16 @@
         <input type='text' name='name' placeholder='name'>
         <input type='email' name='email' placeholder='email'>
         <input type='password' name='password' placeholder='password'>
+        <select name="roleId">
+            <% roles.forEach(function (role) { %>
+                <option value="<%= role.id %>"><%= role.name %></option>
+            <% }); %>
+        </select>
+
         <button>Sign Up!</button>
+
 
     </form>
     <a href='/'>Go Back</a>
 </div>
+

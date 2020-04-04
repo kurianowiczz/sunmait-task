@@ -5,8 +5,10 @@ export default class ProjectService {
         return Container.getItem('projectModel').create(project);
     };
 
-    static async findProjectByName(name) {
-        return Container.getItem('projectModel').findOne({ name });
+    static async findByName(name) {
+        return Container.getItem('projectModel').findOne({
+            where: { name },
+        });
     };
 
     static async findAll() {
@@ -16,6 +18,12 @@ export default class ProjectService {
     static async deleteById(id) {
         return Container.getItem('projectModel').destroy({
             where: { id },
+        });
+    };
+
+    static async findByUserId(userId) {
+        return Container.getItem('projectModel').findOne({
+            where: { userId },
         });
     };
 }

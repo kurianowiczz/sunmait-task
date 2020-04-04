@@ -9,6 +9,12 @@ export default class RoleService {
         return Container.getItem('roleModel').findAll();
     };
 
+    static async findById(id) {
+        return Container.getItem('roleModel').findOne({
+            where: { id },
+        });
+    };
+
     static async deleteById(id) {
         return Container.getItem('roleModel').destroy({
             where: { id },

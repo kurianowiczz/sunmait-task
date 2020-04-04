@@ -10,7 +10,7 @@ export const app = express();
 
 const startApp = async () => {
     app.use(bodyParser.json());
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.urlencoded({ extended: false }));
     app.set('views', './src/views');
     app.set('view engine', 'ejs');
     // app.use(express.static(__dirname + '/public'));

@@ -11,7 +11,6 @@ export default async () => {
     const sequelize = new Sequelize(config.databaseConnection);
     sequelize.authenticate();
     const Role = loadRole(sequelize, Sequelize);
-    // TODO add role dev & manager hardcode
     const User = loadUser(sequelize, Sequelize);
     const Task = loadTask(sequelize, Sequelize);
     const Comment = loadComment(sequelize, Sequelize);

@@ -6,7 +6,9 @@ export default class UserService {
     };
 
     static async findUserByEmail(email) {
-        return Container.getItem('userModel').findOne({ email });
+        return Container.getItem('userModel').findOne({
+            where: { email },
+        });
     };
 
     static async deleteById(id) {
