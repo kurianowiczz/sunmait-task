@@ -2,6 +2,10 @@
     <h1>Welcome, <%= user.name %></h1>
     <div class="projects">
         <p>Your projects:</p>
-        <%= allProjects.toJSON().name %>
+        <%= allProjects.name %>
+    </div>
+    <div>
+        <a href="/project/add?token=<%= token %>"><button id="add-project">Add project</button></a>
     </div>
 </div>
+

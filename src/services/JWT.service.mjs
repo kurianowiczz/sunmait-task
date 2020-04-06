@@ -8,9 +8,10 @@ export default class JWTService {
 
     static async verifyToken(token) {
         try {
-            return jwt.verify(token, config.secretKey);
+            const data = await jwt.verify(token, config.secretKey);
+            return data;
         } catch (e) {
-            return null;
+            console.log(e);
         }
     }
 }

@@ -3,8 +3,6 @@ import config from "../config.mjs";
 import userService from '../services/User.service.mjs';
 import jwtService from '../services/JWT.service.mjs';
 import roleService from '../services/Role.service.mjs';
-import projectService from '../services/Project.service.mjs';
-import middleware from '../middleware/index.mjs';
 
 const router = express.Router();
 
@@ -62,15 +60,5 @@ router.post('/login', async (req, res) => {
 //
 //     return res.status(400).send({errors: [{message: 'not authenticated'}]});
 // });
-
-router.get('/profile', middleware.isLogin, async (req, res) => {
-    console.log(req.params);
-    const allProjects = await projectService.findByUserId(req.user.id);
-    res.render('profile', {
-        allProjects: allProjects,
-        user: req.user,
-        token: req.header('token') || req.query['token']
-    });
-});
 
 export default router;
