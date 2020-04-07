@@ -1,7 +1,6 @@
 <div class="container">
-    <form action='action="/project/add?token=<%- new URL(window.location).searchParams.get('token') %>" ' method='post'>
-        <input type='name' name='name' placeholder='project name'>
-        <input type='name' name='name' placeholder='userId'>
+    <form action="/project/add?token=<%= token %>" method='post'>
+        <input type='text' name='name' placeholder='project name'>
         <button>Add</button>
 
     </form>
