@@ -1,8 +1,10 @@
 <div class="container">
-    <h1>Welcome, <%= user.name %></h1>
+    <div><h1>Welcome, <%= user.name %></h1></div>
     <div class="projects">
         <p>Your projects:</p>
-        <%= allProjects.name %>
+            <% allProjects.forEach(function (project) { %>
+                <div><a href="/project/<%= project.id %>?token=<%= token %>"> <%= project.name %> </a></div>
+            <% }); %>
     </div>
     <div>
         <a href="/project/add?token=<%= token %>"><button id="add-project">Add project</button></a>

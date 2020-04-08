@@ -18,4 +18,12 @@ export default class TaskService {
             where: { id },
         });
     };
+
+    static async findAllById(projectId) {
+        return Container.getItem('taskModel').findAll()
+            .then(all => {
+                console.log(all);
+                return all.filter(el => el.dataValues.projectId === projectId);
+            });
+    };
 }

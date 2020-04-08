@@ -1,0 +1,14 @@
+<div class="container">
+    <div><h1><%= project.name %></h1></div>
+    <div class="tasks">
+        <p>Your tasks:</p>
+        <% allTasks.forEach(function (task) { %>
+            <div><a><%= task.name %></a> - <%= task.description %></div>
+
+        <% }); %>
+    </div>
+    <div>
+        <a href="/task/<%= project.id %>/add?token=<%= token %>"><button id="add-task">Add task</button></a>
+    </div>
+
+</div>

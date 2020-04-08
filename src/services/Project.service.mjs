@@ -7,7 +7,13 @@ export default class ProjectService {
 
     static async findByName(name) {
         return Container.getItem('projectModel').findOne({
-            where: { name },
+            where: {name},
+        });
+    };
+
+    static async findById(id) {
+        return Container.getItem('projectModel').findOne({
+            where: { id },
         });
     };
 
@@ -17,13 +23,21 @@ export default class ProjectService {
 
     static async deleteById(id) {
         return Container.getItem('projectModel').destroy({
-            where: { id },
+            where: {id},
         });
     };
 
     static async findByUserId(userId) {
         return Container.getItem('projectModel').findOne({
-            where: { userId },
+            where: {userId},
         });
+    };
+
+    static async findAllById(userId) {
+        return Container.getItem('projectModel').findAll()
+            .then(all => {
+                console.log(all);
+                return all.filter(el => el.dataValues.userId === userId);
+            });
     };
 }

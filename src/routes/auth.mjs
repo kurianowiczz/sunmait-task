@@ -20,8 +20,7 @@ router.post('/register', async (req, res) => {
     if (!req.body) {
         res.status(400).send({code: 400, error: 'Error registration'});
     }
-    console.log(req.body);
-    const {name, email, password, roleId} = req.body;
+    const { name, email, password, roleId } = req.body;
     const newUser = await userService.addUser({name, email, password, roleId: +roleId});
     if (!newUser) {
         res.status(400).send({code: 400, error: 'Error'});

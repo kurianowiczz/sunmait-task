@@ -1,0 +1,11 @@
+<div class="container">
+    <form action="/task/<%= projectId %>/add?token=<%= token %>" method='post'>
+        <input type='text' name='name' placeholder='task name'>
+        <input type='text' name='description' placeholder='description'>
+        <input type='text' name='deadline' placeholder='deadline'>
+        <input type='text' name='status' placeholder='status'>
+        <button>Add</button>
+    </form>
+    <a href='/'>Go Back</a>
+</div>
+

@@ -6,8 +6,7 @@ import helpers from "../helpers/index.mjs";
 const router = express.Router();
 
 router.get('/profile', middleware.isLogin, async (req, res) => {
-    console.log('4. token in profile.js', req.header('token') || req.query['token']);
-    const allProjects = await projectService.findByUserId(req.user.id);
+    const allProjects = await projectService.findAllById(req.user.id);
     res.render(...helpers.withParamToken('profile', req, { user: req.user, allProjects }));
 });
 
