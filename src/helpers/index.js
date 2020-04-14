@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     withToken: (url, req) => {
         const token = req.header('token') || req.query['token'];
         return `${url}?token=${token}`;

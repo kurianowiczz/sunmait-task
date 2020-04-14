@@ -1,8 +1,8 @@
-import express from 'express';
-import config from "../config.mjs";
-import userService from '../services/User.service.mjs';
-import jwtService from '../services/JWT.service.mjs';
-import roleService from '../services/Role.service.mjs';
+const express = require('express'),
+    config = require('../config'),
+    userService = require('../services/User.service'),
+    jwtService = require('../services/JWT.service'),
+    roleService = require('../services/Role.service');
 
 const router = express.Router();
 
@@ -60,4 +60,4 @@ router.post('/login', async (req, res) => {
 //     return res.status(400).send({errors: [{message: 'not authenticated'}]});
 // });
 
-export default router;
+module.exports = router;

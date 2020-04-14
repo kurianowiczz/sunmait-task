@@ -1,4 +1,4 @@
-export default {
+module.exports = {
     setItem(key, item) {
        global.container[key] = item;
     },

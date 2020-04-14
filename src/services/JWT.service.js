@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken';
-import config from '../config.mjs';
+const jwt = require('jsonwebtoken'),
+    config = require('../config');
 
-export default class JWTService {
+class JWTService {
     static async generateToken(data) {
         return jwt.sign(data, config.secretKey);
     }
@@ -15,3 +15,5 @@ export default class JWTService {
         }
     }
 }
+
+module.exports = JWTService;

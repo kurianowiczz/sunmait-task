@@ -1,6 +1,6 @@
-import jwtService from '../services/JWT.service.mjs';
+const jwtService = require('../services/JWT.service');
 
-export default {
+module.exports = {
     isLogin: async (req, res, next) => {
         let token = req.header('token') || req.query['token'];
         if(!token) {
@@ -15,6 +15,13 @@ export default {
         next();
     },
 
-};
+    developerOnly: async (req, res, next) => {
 
+    },
+
+    managerOnly: async (req, res, next) => {
+
+    },
+
+};
 

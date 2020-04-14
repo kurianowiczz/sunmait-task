@@ -1,7 +1,7 @@
-import express from 'express';
-import middleware from "../middleware/index.mjs";
-import projectService from "../services/Project.service.mjs";
-import helpers from "../helpers/index.mjs";
+const express = require('express'),
+    middleware = require('../middleware'),
+    projectService = require('../services/Project.service'),
+    helpers = require('../helpers');
 
 const router = express.Router();
 
@@ -10,4 +10,4 @@ router.get('/profile', middleware.isLogin, async (req, res) => {
     res.render(...helpers.withParamToken('profile', req, { user: req.user, allProjects }));
 });
 
-export default router;
+module.exports = router;

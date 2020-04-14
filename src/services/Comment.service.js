@@ -1,6 +1,6 @@
-import Container from "../utils/Container.mjs";
+const Container = require('../utils/Container');
 
-export default class CommentService {
+class CommentService {
     static async addComment(comment) {
         return Container.getItem('commentModel').create(comment);
     };
@@ -13,9 +13,19 @@ export default class CommentService {
         return Container.getItem('commentModel').findOne({ id });
     };
 
+    static async findAllById(taskId) {
+        return Container.getItem('commentModel').findAll()
+            .then(all => {
+                console.log(all);
+                return all.filter(el => el.dataValues.taskId === taskId);
+            });
+    };
+
     static async deleteById(id) {
         return Container.getItem('commentModel').destroy({
             where: { id },
         });
     };
 }
+
+module.exports = CommentService;

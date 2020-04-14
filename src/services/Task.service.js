@@ -1,6 +1,6 @@
-import Container from "../utils/Container.mjs";
+const Container = require('../utils/Container');
 
-export default class TaskService {
+class TaskService {
     static async addTask(task) {
         return Container.getItem('taskModel').create(task);
     };
@@ -27,3 +27,5 @@ export default class TaskService {
             });
     };
 }
+
+module.exports = TaskService;

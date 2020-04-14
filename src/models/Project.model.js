@@ -1,11 +1,10 @@
-export default (sequelize, DataTypes) => {
-    const Role = sequelize.define('Role', {
+module.exports = (sequelize, DataTypes) => {
+    const Project = sequelize.define('Project', {
         id: {
             type: DataTypes.INTEGER,
-            autoIncrement: true,
             primaryKey: true,
-            allowNull: false,
-        },
+            autoIncrement: true,
+            allowNull: false },
         name: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -14,5 +13,5 @@ export default (sequelize, DataTypes) => {
         timestamps: false,
     });
 
-    return Role;
+    return Project;
 };

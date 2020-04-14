@@ -1,6 +1,6 @@
-import Container from "../utils/Container.mjs";
+const Container = require('../utils/Container');
 
-export default class UserService {
+class UserService {
     static async addUser(user) {
         return Container.getItem('userModel').create(user);
     };
@@ -17,3 +17,5 @@ export default class UserService {
         });
     };
 }
+
+module.exports = UserService;

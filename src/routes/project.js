@@ -1,8 +1,8 @@
-import express from 'express';
-import middleware from "../middleware/index.mjs";
-import helpers from "../helpers/index.mjs";
-import projectService from '../services/Project.service.mjs';
-import taskService from '../services/Task.service.mjs';
+const express = require('express'),
+    middleware = require('../middleware'),
+    helpers = require('../helpers'),
+    projectService = require('../services/Project.service'),
+    taskService = require('../services/Task.service');
 
 const router = express.Router();
 
@@ -24,4 +24,4 @@ router.get('/:projectId', middleware.isLogin, async (req, res) => {
 
 });
 
-export default router;
+module.exports = router;

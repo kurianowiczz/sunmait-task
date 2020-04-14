@@ -1,6 +1,6 @@
-import Container from "../utils/Container.mjs";
+const Container = require('../utils/Container');
 
-export default class RoleService {
+class RoleService {
     static async addRole(role) {
         return Container.getItem('roleModel').create(role);
     };
@@ -21,3 +21,5 @@ export default class RoleService {
         });
     };
 }
+
+module.exports = RoleService;

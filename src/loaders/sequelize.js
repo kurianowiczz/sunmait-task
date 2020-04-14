@@ -1,13 +1,13 @@
-import Sequelize from 'sequelize';
-import config from "../config.mjs";
-import loadTask from  '../models/Task.model.mjs';
-import loadUser from  '../models/User.model.mjs';
-import loadComment from  '../models/Comment.model.mjs';
-import loadProject from  '../models/Project.model.mjs';
-import loadRole from  '../models/Role.model.mjs';
-import Container from "../utils/Container.mjs";
+const Sequelize = require('sequelize'),
+    config = require('../config'),
+    loadTask = require('../models/Task.model'),
+    loadUser = require('../models/User.model'),
+    loadComment = require('../models/Comment.model'),
+    loadProject = require('../models/Project.model'),
+    loadRole = require('../models/Role.model'),
+    Container = require('../utils/Container');
 
-export default async () => {
+module.exports = async () => {
     const sequelize = new Sequelize(config.databaseConnection);
     sequelize.authenticate();
     const Role = loadRole(sequelize, Sequelize);

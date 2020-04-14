@@ -3,8 +3,7 @@
     <div class="tasks">
         <p>Your tasks:</p>
         <% allTasks.forEach(function (task) { %>
-            <div><a><%= task.name %></a> - <%= task.description %></div>
-
+            <div><a href="/task/<%= task.id %>?token=<%= token %>"> <%= task.name %> - <%= task.description %>  </a></div>
         <% }); %>
     </div>
     <div>
