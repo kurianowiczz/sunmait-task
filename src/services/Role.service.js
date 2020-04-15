@@ -1,4 +1,5 @@
 const Container = require('../utils/Container');
+const db = require('../models/index');
 
 class RoleService {
     static async addRole(role) {
@@ -6,7 +7,7 @@ class RoleService {
     };
 
     static async findAll() {
-        return Container.getItem('roleModel').findAll();
+        return db['Role'].findAll();
     };
 
     static async findById(id) {

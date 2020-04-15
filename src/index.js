@@ -2,7 +2,6 @@ global.container = {};
 const express = require('express'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    loader = require('./loaders'),
     mainRouter = require('./routes'),
     path = require('path');
 
@@ -16,7 +15,6 @@ const startApp = async () => {
     const __dirname = path.resolve();
     app.use(express.static(__dirname + '/public'));
     app.use(mainRouter);
-    await loader();
 
     app.listen(config.port, () => {
         console.log(`Server started on port ${ config.port }`);

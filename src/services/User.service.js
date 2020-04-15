@@ -1,18 +1,18 @@
-const Container = require('../utils/Container');
+const db = require('../models/index');
 
 class UserService {
     static async addUser(user) {
-        return Container.getItem('userModel').create(user);
+        return db['User'].create(user);
     };
 
     static async findUserByEmail(email) {
-        return Container.getItem('userModel').findOne({
+        return db['User'].findOne({
             where: { email },
         });
     };
 
     static async deleteById(id) {
-        return Container.getItem('userModel').destroy({
+        return db['User'].destroy({
             where: { id },
         });
     };
