@@ -2,14 +2,16 @@
 module.exports = (sequelize, DataTypes) => {
   const Comment = sequelize.define('Comment', {
     description: DataTypes.STRING,
-    date: DataTypes.DATE
+    date: DataTypes.DATE,
+    taskId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {});
-  Comment.associate = (models) => {
-      Comment.hasMany(models.Task, {
+  Comment.associate = function(models) {
+      Comment.belongsTo(models.Task, {
           foreignKey: 'taskId',
           onDelete: 'CASCADE',
       });
-      Comment.hasMany(models.User, {
+      Comment.belongsTo(models.User, {
           foreignKey: 'userId',
           onDelete: 'CASCADE',
       });

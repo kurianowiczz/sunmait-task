@@ -1,20 +1,20 @@
-const Container = require('../utils/Container');
+const db = require('../../m');
 
 class TaskService {
     static async addTask(task) {
-        return Container.getItem('taskModel').create(task);
+        return db['User'].create(task);
     };
 
     static async findAll() {
-        return Container.getItem('taskModel').findAll();
+        return db['User'].findAll();
     };
 
     static async findById(id) {
-        return Container.getItem('taskModel').findOne({ id });
+        return db['User'].findOne({ id });
     };
 
     static async deleteById(id) {
-        return Container.getItem('taskModel').destroy({
+        return db['User'].destroy({
             where: { id },
         });
     };

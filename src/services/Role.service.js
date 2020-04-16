@@ -1,9 +1,8 @@
-const Container = require('../utils/Container');
-const db = require('../models/index');
+const db = require('../../m');
 
 class RoleService {
     static async addRole(role) {
-        return Container.getItem('roleModel').create(role);
+        return db['User'].create(role);
     };
 
     static async findAll() {
@@ -11,13 +10,13 @@ class RoleService {
     };
 
     static async findById(id) {
-        return Container.getItem('roleModel').findOne({
+        return db['User'].findOne({
             where: { id },
         });
     };
 
     static async deleteById(id) {
-        return Container.getItem('roleModel').destroy({
+        return db['User'].destroy({
             where: { id },
         });
     };

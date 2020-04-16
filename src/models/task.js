@@ -3,19 +3,24 @@ module.exports = (sequelize, DataTypes) => {
   const Task = sequelize.define('Task', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    status: DataTypes.ENUM('waiting', 'implementation', 'verifying', 'releasing'),
-    deadline: DataTypes.DATE
+    status: DataTypes.STRING,
+    deadline: DataTypes.DATE,
+    projectId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {});
-  Task.associate = (models) => {
-      Task.hasMany(models.User, {
-          foreignKey: 'userId',
+  Task.associate = function(models) {
+      Task.hasMany(models.Comment, {
+          foreignKey: 'taskId',
           onDelete: 'CASCADE',
       });
-      Task.hasMany(models.Project, {
+      Task.belongsTo(models.Project, {
           foreignKey: 'projectId',
           onDelete: 'CASCADE',
       });
-
+      Task.belongsTo(models.User, {
+          foreignKey: 'userId',
+          onDelete: 'CASCADE',
+      });
   };
   return Task;
 };

@@ -1,20 +1,20 @@
-const Container = require('../utils/Container');
+const db = require('../../m');
 
 class CommentService {
     static async addComment(comment) {
-        return Container.getItem('commentModel').create(comment);
+        return db['User'].create(comment);
     };
 
     static async findAll() {
-        return Container.getItem('commentModel').findAll();
+        return db['User'].findAll();
     };
 
     static async findById(id) {
-        return Container.getItem('commentModel').findOne({ id });
+        return db['User'].findOne({ id });
     };
 
     static async findAllById(taskId) {
-        return Container.getItem('commentModel').findAll()
+        return db['User'].findAll()
             .then(all => {
                 console.log(all);
                 return all.filter(el => el.dataValues.taskId === taskId);
@@ -22,7 +22,7 @@ class CommentService {
     };
 
     static async deleteById(id) {
-        return Container.getItem('commentModel').destroy({
+        return db['User'].destroy({
             where: { id },
         });
     };

@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
+    "username": "daria",
+    "password": 5432,
     "database": "sunmaitdb",
     "host": "127.0.0.1",
     "dialect": "postgres",
@@ -10,17 +10,17 @@
   "test": {
     "username": "root",
     "password": null,
-    "database": "sunmaitdb_test",
+    "database": "database_test",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "sunmaitdb_production",
+    "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "postgres",
     "operatorsAliases": false
   }
 }

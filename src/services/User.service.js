@@ -1,4 +1,4 @@
-const db = require('../models/index');
+const db = require('../../m');
 
 class UserService {
     static async addUser(user) {
